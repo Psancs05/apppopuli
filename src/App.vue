@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import i18n from "./i18n";
+
 export default {
   data: () => ({
     activeTab: 1,
@@ -46,13 +48,17 @@ export default {
         {
           nombre: this.$t("bottomBar.ayuda"),
           icono: "mdi-help",
-          ruta: "/ayuda",
+          ruta: `/${i18n.locale}/ayuda`,
         },
-        { nombre: this.$t("bottomBar.inicio"), icono: "mdi-home", ruta: "/" },
+        {
+          nombre: this.$t("bottomBar.inicio"),
+          icono: "mdi-home",
+          ruta: `/${i18n.locale}/`,
+        },
         {
           nombre: this.$t("bottomBar.explorar"),
           icono: "mdi-map-marker",
-          ruta: "/explorar",
+          ruta: `/${i18n.locale}/explorar`,
         },
       ];
     },
