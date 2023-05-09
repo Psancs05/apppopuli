@@ -1,3 +1,7 @@
 {
-  "message": "hello i18n !!"
+  "bottomBar": {
+    "ayuda": "Ayuda",
+    "inicio": "Inicio",
+    "explorar": "Explorar"
+  }
 }

@@ -1,15 +1,8 @@
 <template>
   <v-app>
     <v-main>
-      <v-footer
-        app
-        fixed
-        padless
-        color="white">
-        <v-card
-          color="#178649"
-          width="100%"
-          height="100%">
+      <v-footer app fixed padless color="white">
+        <v-card color="#178649" width="100%" height="100%">
           <v-tabs
             v-model="activeTab"
             background-color="#178649"
@@ -17,15 +10,18 @@
             fixed-tabs
             dark
             icons-and-text
-            optional>
-            <v-tab style="text-decoration: none"
+            optional
+          >
+            <v-tab
+              style="text-decoration: none"
               v-for="icon in icons"
               :key="icon"
-              :to="icon.ruta">
+              :to="icon.ruta"
+            >
               <div class="texto_iconos">
                 {{ icon.nombre }}
               </div>
-              
+
               <v-icon>
                 {{ icon.icono }}
               </v-icon>
@@ -40,30 +36,38 @@
 </template>
 
 <script>
-
-  export default {
-    data: () => ({
-      activeTab: 1,
-      icons: [
-        { nombre: 'AYUDA', icono: 'mdi-help', ruta: '/ayuda' },
-        { nombre: 'INICIO', icono: 'mdi-home', ruta: '/' },
-        { nombre: 'EXPLORAR', icono: 'mdi-map-marker', ruta: '/explorar' }
-      ]
-    })
-  }
-
+export default {
+  data: () => ({
+    activeTab: 1,
+  }),
+  computed: {
+    icons() {
+      return [
+        {
+          nombre: this.$t("bottomBar.ayuda"),
+          icono: "mdi-help",
+          ruta: "/ayuda",
+        },
+        { nombre: this.$t("bottomBar.inicio"), icono: "mdi-home", ruta: "/" },
+        {
+          nombre: this.$t("bottomBar.explorar"),
+          icono: "mdi-map-marker",
+          ruta: "/explorar",
+        },
+      ];
+    },
+  },
+};
 </script>
 
 <style>
+#app {
+  font-family: Helvetica, sans-serif;
+}
 
-  #app {
-    font-family: Helvetica, sans-serif;
-  }
-  
-  .texto_iconos {
-    margin-top: 5px;
-    font-size: 12px;
-    font-weight: bold
-  }
-
+.texto_iconos {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
 </style>
