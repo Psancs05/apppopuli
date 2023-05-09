@@ -1,48 +1,34 @@
 <template>
   <div class="ayuda">
-
     <IconoUsuario />
 
-    <div class="titulo">
-      Ayuda
-    </div>
+    <div class="titulo">Ayuda</div>
 
     <div style="padding-bottom: 10px">
-      <v-card class="mx-auto"
-        width="98%"
-        max-width="800">
-        <v-tabs
-          v-model="activeTab"
-          background-color="#178649"
-          grow
-          dark>
-          <v-tab
-            v-for="tab in tabs"
-            :key="tab">
+      <v-card class="mx-auto" width="98%" max-width="800">
+        <v-tabs v-model="activeTab" background-color="#178649" grow dark>
+          <v-tab v-for="tab in tabs" :key="tab">
             <div class="texto_tab">
               {{ tab }}
             </div>
           </v-tab>
         </v-tabs>
 
-        <v-tabs-items
-          v-model="activeTab">
+        <v-tabs-items v-model="activeTab">
           <v-tab-item>
             <v-card flat>
-              <v-card-text style="text-align: justify">
-                Usándola.
-              </v-card-text>
+              <v-card-text style="text-align: justify"> Usándola. </v-card-text>
             </v-card>
           </v-tab-item>
 
           <v-tab-item>
-            <v-card class="mx-auto"
-              width="98%"
-              flat>
-
-              <v-card style="padding-top: 10px" class="mx-auto"
+            <v-card class="mx-auto" width="98%" flat>
+              <v-card
+                style="padding-top: 10px"
+                class="mx-auto"
                 width="90%"
-                flat>
+                flat
+              >
                 <v-select
                   v-model="selectedSintoma"
                   clearable
@@ -51,7 +37,8 @@
                   :items="sintomas"
                   :item-text="'descripcion'"
                   :item-value="'id'"
-                  @input="filtrarPatogenos">
+                  @input="filtrarPatogenos"
+                >
                 </v-select>
               </v-card>
 
@@ -60,63 +47,72 @@
                   v-for="patogeno in patogenos"
                   :key="patogeno"
                   color="#178649"
-                  no-action>
+                  no-action
+                >
                   <template v-slot:activator>
-                    <v-list-item-title style="color: #178649; font-weight: bold;">
-                      <i>{{ patogeno.nombre_cientifico }}</i> ({{ patogeno.nombre_vulgar }})
+                    <v-list-item-title
+                      style="color: #178649; font-weight: bold"
+                    >
+                      <i>{{ patogeno.nombre_cientifico }}</i> ({{
+                        patogeno.nombre_vulgar
+                      }})
                     </v-list-item-title>
                   </template>
-                  
+
                   <v-card flat>
                     <v-list-item>
                       <v-list-item-content style="text-align: justify">
                         <div class="titulo_patogeno">
                           ¿A quién ataca?
-                          <br><br>
+                          <br /><br />
                         </div>
                         {{ patogeno.parrafo_quien }}
 
                         <div class="titulo_patogeno">
-                          <br>
+                          <br />
                           ¿Cómo identificarlo?
-                          <br><br>
+                          <br /><br />
                         </div>
                         {{ patogeno.parrafo_como }}
 
                         <div class="cuerpo">
-                          <v-btn style="margin-top: 30px"
+                          <v-btn
+                            style="margin-top: 30px"
                             dark
                             width="100%"
                             max-width="500px"
                             height="50"
                             color="#178649"
-                            @click="show(patogeno.id)">
+                            @click="show(patogeno.id)"
+                          >
                             figura 1
                           </v-btn>
                         </div>
 
                         <div class="titulo_patogeno">
-                          <br>
+                          <br />
                           ¿Qué daños causa?
-                          <br><br>
+                          <br /><br />
                         </div>
                         {{ patogeno.parrafo_que }}
 
                         <div class="titulo_patogeno">
-                          <br>
+                          <br />
                           ¿Cuándo verlo?
-                          <br><br>
+                          <br /><br />
                         </div>
                         {{ patogeno.parrafo_cuando }}
-                        
+
                         <div class="cuerpo">
-                          <v-btn style="margin-top: 30px"
+                          <v-btn
+                            style="margin-top: 30px"
                             dark
                             width="100%"
                             max-width="500px"
                             height="50"
                             color="#ff5d55"
-                            @click="download(patogeno.id)">
+                            @click="download(patogeno.id)"
+                          >
                             descargar ficha en formato pdf
                           </v-btn>
                         </div>
@@ -125,53 +121,73 @@
                   </v-card>
                 </v-list-group>
               </v-list>
-
             </v-card>
           </v-tab-item>
         </v-tabs-items>
       </v-card>
     </div>
-    
-    <v-btn class="boton_flotante"
+
+    <v-btn
+      class="boton_flotante"
       fab
       dark
       fixed
       bottom
       right
       color="#ff5d55"
-      to="/informe">
+      :to="informePath"
+    >
       <v-icon>mdi-launch</v-icon>
     </v-btn>
   </div>
 </template>
 
 <script>
+import IconoUsuario from "../components/IconoUsuario";
+import PatogenoDataService from "../services/PatogenoDataService";
+import SintomaDataService from "../services/SintomaDataService";
+import FileService from "../services/FileService";
+import i18n from "@/i18n";
 
-  import IconoUsuario from "../components/IconoUsuario"
-  import PatogenoDataService from "../services/PatogenoDataService"
-  import SintomaDataService from "../services/SintomaDataService"
-  import FileService from "../services/FileService"
+export default {
+  components: {
+    IconoUsuario,
+  },
 
-  export default {
+  data: () => ({
+    activeTab: 0,
+    tabs: ["CÓMO USAR LA APLICACIÓN", "PLAGAS Y ENFERMEDADES"],
 
-    components: {
-      IconoUsuario
+    patogenos: [],
+    sintomas: [],
+  }),
+
+  computed: {
+    informePath() {
+      return `/${i18n.locale}/informe`;
+    },
+  },
+
+  methods: {
+    mostrarPatogenos() {
+      PatogenoDataService.getAll()
+        .then((response) => {
+          this.patogenos = response.data;
+          console.log(response.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
 
-    data: () => ({
-      activeTab: 0,
-      tabs: [
-        'CÓMO USAR LA APLICACIÓN',
-        'PLAGAS Y ENFERMEDADES'
-      ],
-
-      patogenos: [],
-      sintomas: []
-    }),
-
-    methods: {
-      mostrarPatogenos() {
-        PatogenoDataService.getAll()
+    filtrarPatogenos() {
+      if (this.selectedSintoma == null) {
+        // si se limpia la entrada de v-select busca patogenos cuyo
+        // id_sintoma sea null, entonces llamo al metodo mostrarPatogenos
+        // que muestra todos
+        this.mostrarPatogenos();
+      } else {
+        PatogenoDataService.get(this.selectedSintoma)
           .then((response) => {
             this.patogenos = response.data;
             console.log(response.data);
@@ -179,116 +195,95 @@
           .catch((e) => {
             console.log(e);
           });
-      },
-
-      filtrarPatogenos() {
-        if (this.selectedSintoma == null) {
-          // si se limpia la entrada de v-select busca patogenos cuyo
-          // id_sintoma sea null, entonces llamo al metodo mostrarPatogenos
-          // que muestra todos
-          this.mostrarPatogenos();
-        } else {
-          PatogenoDataService.get(this.selectedSintoma)
-            .then((response) => {
-              this.patogenos = response.data;
-              console.log(response.data);
-            })
-            .catch((e) => {
-              console.log(e);
-            });
-        }
-      },
-
-      getMostrarPatogeno(patogeno) {
-        return {
-          id: patogeno.id,
-          nombre_cientifico: patogeno.nombre_cientifico,
-          nombre_vulgar: patogeno.nombre_vulgar,
-          parrafo_quien: patogeno.parrafo_quien,
-          parrafo_como: patogeno.parrafo_como,
-          parrafo_que: patogeno.parrafo_que,
-          parrafo_cuando: patogeno.parrafo_cuando,
-          parrafo_confundir: patogeno.parrafo_confundir
-        };
-      },
-
-      mostrarSintomas() {
-        SintomaDataService.getAll()
-          .then((response) => {
-            this.sintomas = response.data;
-            console.log(response.data);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      },
-
-      getMostrarSintoma(sintoma) {
-        return {
-          id: sintoma.id,
-          descripcion: sintoma.descripcion
-        };
-      },
-
-      download(file) {
-        FileService.download(file)
-          .then((response) => {
-            var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-            var fileLink = document.createElement('a');
-
-            fileLink.href = fileURL;
-            fileLink.setAttribute('download', `${file}.pdf`);
-            document.body.appendChild(fileLink);
-
-            fileLink.click();
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      },
-
-      show(file) {
-        FileService.show(file)
-          .then((response) => {
-            var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-            var fileLink = document.createElement('a');
-
-            fileLink.href = fileURL;
-            fileLink.setAttribute('display', `${file}.jpg`);
-            document.body.appendChild(fileLink);
-
-            fileLink.click();
-          })
-          .catch((e) => {
-            console.log(e);
-          });
       }
-
     },
 
-    mounted() {
-      this.mostrarPatogenos();
-      this.mostrarSintomas();
-    }
-  }
+    getMostrarPatogeno(patogeno) {
+      return {
+        id: patogeno.id,
+        nombre_cientifico: patogeno.nombre_cientifico,
+        nombre_vulgar: patogeno.nombre_vulgar,
+        parrafo_quien: patogeno.parrafo_quien,
+        parrafo_como: patogeno.parrafo_como,
+        parrafo_que: patogeno.parrafo_que,
+        parrafo_cuando: patogeno.parrafo_cuando,
+        parrafo_confundir: patogeno.parrafo_confundir,
+      };
+    },
 
+    mostrarSintomas() {
+      SintomaDataService.getAll()
+        .then((response) => {
+          this.sintomas = response.data;
+          console.log(response.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
+    getMostrarSintoma(sintoma) {
+      return {
+        id: sintoma.id,
+        descripcion: sintoma.descripcion,
+      };
+    },
+
+    download(file) {
+      FileService.download(file)
+        .then((response) => {
+          var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+          var fileLink = document.createElement("a");
+
+          fileLink.href = fileURL;
+          fileLink.setAttribute("download", `${file}.pdf`);
+          document.body.appendChild(fileLink);
+
+          fileLink.click();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
+    show(file) {
+      FileService.show(file)
+        .then((response) => {
+          var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+          var fileLink = document.createElement("a");
+
+          fileLink.href = fileURL;
+          fileLink.setAttribute("display", `${file}.jpg`);
+          document.body.appendChild(fileLink);
+
+          fileLink.click();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
+
+  mounted() {
+    this.mostrarPatogenos();
+    this.mostrarSintomas();
+  },
+};
 </script>
 
 <style>
+.texto_tab {
+  font-size: 9px;
+}
 
-  .texto_tab {
-    font-size: 9px
-  }
+.boton_flotante {
+  margin: 0 0 70px 0;
+}
 
-  .boton_flotante {
-    margin: 0 0 70px 0
-  }
-
-  .titulo_patogeno {
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 25px;
-    color: #178649
-  }
-
+.titulo_patogeno {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  color: #178649;
+}
 </style>
