@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <IconoUsuario />
+    <LanguageSelector />
 
     <div class="titulo">
       <img src="../assets/logo.png" width="180" height="144" />
@@ -51,10 +52,12 @@
 <script>
 import i18n from "@/i18n";
 import IconoUsuario from "../components/IconoUsuario";
+import LanguageSelector from "../components/LanguageSelector.vue";
 
 export default {
   components: {
     IconoUsuario,
+    LanguageSelector,
   },
 
   computed: {
