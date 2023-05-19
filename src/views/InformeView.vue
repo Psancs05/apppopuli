@@ -2,13 +2,13 @@
   <div id="informe">
     <IconoUsuario />
 
-    <div class="titulo">Informe</div>
+    <div class="titulo">{{this.$t("informe.titulo")}}</div>
 
     <div class="cuerpo">
       <v-container fluid style="width: 95%; max-width: 500px">
         <div class="asterisco">
-          Los campos acompañados de un asterisco (*) son
-          <lab style="color: #ff5d55">obligatorios</lab>
+          {{$t("informe.campoAsteriscos")}}
+          <lab style="color: #ff5d55">{{$t("informe.msgObligatorios")}}</lab>
         </div>
 
         <br />
@@ -17,7 +17,7 @@
           <v-select
             v-model="informe.patogeno"
             clearable
-            label="Plaga/Enfermedad (si se conoce)"
+            :label="$t('informe.labelEnfermedad')"
             color="#178649"
             :items="patogenos"
             item-value="nombre_cientifico"
@@ -43,8 +43,7 @@
                 </router-link>
               </template>
               <span>
-                Encontrarás más información acerca de plagas y enfermedades que
-                afectan al chopo en el apartado de ayuda.
+                {{$t("informe.msgAyuda")}}
               </span>
             </v-tooltip>
           </v-select>
@@ -64,7 +63,7 @@
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
                 v-model="computedDateFormatted"
-                label="Fecha (*)"
+                :label="$t('informe.labelFecha')"
                 color="#178649"
                 hint="DD/MM/AA"
                 readonly
@@ -88,7 +87,7 @@
                 required
                 :rules="reglaObligatorio"
                 :value="location.address"
-                label="Localización (*)"
+                :label="$t('informe.labelLocalizacion')"
                 color="#178649"
                 readonly
                 v-bind="attrs"
@@ -132,23 +131,23 @@
             v-model="informe.extension_arboles"
             required
             :rules="reglaObligatorio"
-            label="Total de árboles dañados (*)"
+            :label="$t('informe.labelArbolesDaniados')"
             color="#178649"
-            suffix="árbol/es"
+            :suffix="$t('informe.suffixArboles')"
             :items="extension"
           >
             <v-tooltip top slot="append-outer">
               <template v-slot:activator="{ on }">
                 <v-icon v-on="on" size="20" color="#178649"> mdi-help </v-icon>
               </template>
-              <span>si me disculpa</span>
+              <span>si me disculpa</span> 
             </v-tooltip>
           </v-select>
 
           <v-text-field
             v-model="informe.extension_pies"
             required
-            label="Porcentaje de pies afectados (*)"
+            :label="$t('informe.labelPorcentajeAfectados')"
             color="#178649"
             suffix="%"
             :rules="reglasExtension"
@@ -163,7 +162,7 @@
 
           <v-select
             v-model="informe.severidad"
-            label="Severidad del daño"
+            :label="$t('informe.labelSeveridad')"
             color="#178649"
             suffix="%"
             :items="severidadOpciones"
@@ -177,14 +176,14 @@
           </v-select>
 
           <v-textarea v-model="informe.observaciones" color="#178649" auto-grow>
-            <template v-slot:label> Observaciones </template>
+            <template v-slot:label> {{$t("informe.labelObservaciones")}} </template>
           </v-textarea>
 
           <v-text-field
             v-model="informe.contacto"
             required
             :rules="reglaObligatorio"
-            label="Teléfono o correo electrónico (*)"
+            :label="$t('informe.labelCorreoTelefono')"
             color="#178649"
           >
           </v-text-field>
@@ -199,7 +198,7 @@
             :disabled="!valid"
             @click="validar"
           >
-            enviar
+          {{$t("informe.botonEnviar")}}
           </v-btn>
         </v-form>
       </v-container>
@@ -257,20 +256,20 @@ export default {
     location: {},
 
     // campo extension del daño
-    extension: ["1", "2-10", "10-100", "Más de 100"],
+    // extension: ["1", "2-10", "10-100", "Más de 100"],
 
     // campo severidad del daño
-    severidadOpciones: ["0-25", "25-75", "Más del 75"],
+    // severidadOpciones: ["0-25", "25-75", "Más del 75"],
 
     // reglas
-    reglaObligatorio: [(v) => !!v || "Este campo es obligatorio"],
+    // reglaObligatorio: [(v) => !!v || "Este campo es obligatorio"],
 
-    reglasExtension: [
-      (v) => !!v || "Este campo es obligatorio",
-      (v) =>
-        /^[1-9][0-9]?$|^100$/.test(v) ||
-        "Introduce un valor numérico entre 1 y 100",
-    ],
+    // reglasExtension: [
+    //   (v) => !!v || "Este campo es obligatorio",
+    //   (v) =>
+    //     /^[1-9][0-9]?$|^100$/.test(v) ||
+    //     "Introduce un valor numérico entre 1 y 100",
+    // ],
   }),
 
   watch: {
@@ -296,6 +295,26 @@ export default {
     ayudaPath() {
       return `/${i18n.locale}/ayuda`;
     },
+    // campo extension del daño
+    extension(){
+      return ["1", "2-10", "10-100", this.$t('informe.dropDownExtension')]
+    },
+    // campo severidad del daño
+    severidadOpciones(){
+      return ["0-25", "25-75", this.$t('informe.dropDownSeveridad')]
+    },
+    // reglas
+    reglaObligatorio() {
+      return [(v) => !!v || this.$t('informe.msgCampoObligatorio')]
+    },
+    reglasExtension() {
+      return [
+      (v) => !!v || this.$t('informe.msgCampoObligatorio'),
+      (v) =>
+        /^[1-9][0-9]?$|^100$/.test(v) ||
+        this.$t('informe.msgValorIncorrecto'),
+    ]
+    }
   },
 
   methods: {

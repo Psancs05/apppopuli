@@ -3,5 +3,81 @@
     "ayuda": "Ayuda",
     "inicio": "Inicio",
     "explorar": "Explorar"
+  },
+  "inicio":{
+    "botonInforme": "enviar informe",
+    "botonLogin": "iniciar sesión",
+    "botonLogout": "cerrar sesión"
+  },
+  "login":{
+    "titulo": "Iniciar sesión",
+    "labelCorreo": "Teléfono o correo electrónico",
+    "labelContrasena": "Contraseña",
+    "botonLogin": "iniciar sesión",
+    "textRegistro": "¿No tienes cuenta?",
+    "botonRegistro": "Regístrate",
+    "reglaObligatorio": "Este campo es obligatorio"
+  },
+  "registro":{
+    "titulo": "Registrarse",
+    "labelCorreo": "Teléfono o correo electrónico",
+    "labelContrasena": "Contraseña",
+    "botonRegistro": "registrarse",
+    "reglaObligatorio": "Este campo es obligatorio"
+  },
+  "explorar":{
+    "titulo": "Explorar",
+    "nombreTabla": "HISTORIAL DE INFORMES",
+    "col1": "Plaga o Enfermedad",
+    "col2": "Fecha",
+    "col3": "Total de árboles dañados",
+    "col4": "Severidad del daño",
+    "col5": "Localización"
+  },
+  "gracias":{
+    "titulo": "¡Gracias!",
+    "informeEnviado": "Tu informe se ha enviado correctamente.",
+    "msgFormulario1": "¡Ayúdanos a mejorar! Queremos saber tu opinión sobre nuestra aplicacón.\nRellenar este",
+    "msgFormulario2": "formulario",
+    "msgFormulario3": "solo te llevará unos minutos.",
+    "msgNo": "no, gracias"
+  },
+  "ayuda":{
+    "titulo": "Ayuda",
+    "tabAyuda": "CÓMO USAR LA APLICACIÓN",
+    "tabEnfermedades": "PLAGAS Y ENFERMEDADES",
+    "desc1": "¿A quién ataca?",
+    "desc2": "¿Cómo identificarlo?",
+    "desc3": "¿Qué daños causa?",
+    "desc4": "¿Cuándo verlo?",
+    "descargarPDFBoton": "descargar ficha en formato pdf"
+  },
+  "informe":{
+    "titulo": "Informe",
+    "campoAsteriscos": "Los campos acompañados de un asterisco (*) son",
+    "msgObligatorios": "obligatorios",
+    "labelEnfermedad": "Plaga/Enfermedad (si se conoce)",
+    "msgAyuda": "Encontrarás más información acerca de plagas y enfermedades que\nafectan al chopo en el apartado de ayuda.",
+    "labelFecha": "Fecha (*)",
+    "labelLocalizacion": "Localización (*)",
+    "labelArbolesDaniados": "Total de árboles dañados (*)",
+    "labelPorcentajeAfectados": "Porcentaje de pies afectados (*)",
+    "labelSeveridad": "Severidad del daño",
+    "labelObservaciones": "Observaciones",
+    "labelCorreoTelefono": "Teléfono o correo electrónico (*)",
+    "suffixArboles": "árbol/es",
+    "botonEnviar": "enviar",
+    "dropDownExtension": "Más de 100",
+    "dropDownSeveridad": "Más del 75",
+    "msgCampoObligatorio": "Este campo es obligatorio",
+    "msgValorIncorrecto": "Introduce un valor numérico entre 1 y 100"
+  },
+  "componenteMapa":{
+    "labelDireccion": "Buscar una dirección"
+  },
+  "componenteSubirArchivos":{
+    "labelSeleccionarArchivos": "SELECCIONAR ARCHIVOS",
+    "labelSubirArchivos": "SUBIR ARCHIVOS",
+    "msgError": "El archivo no se ha podido enviar correctamente: "
   }
 }

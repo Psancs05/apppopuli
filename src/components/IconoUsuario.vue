@@ -24,7 +24,7 @@
               link>
               <v-list-item-title
                   @click="logout">
-                  Cerrar sesión
+                  {{$t("inicio.botonLogout")}}
               </v-list-item-title>
               </v-list-item>
           </v-list>

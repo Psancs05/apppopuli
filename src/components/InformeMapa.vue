@@ -64,11 +64,6 @@
         data () {
             return {
                 loading: false,
-                geoSearchOptions: {
-                    provider: new OpenStreetMapProvider(),
-                    autoClose: true,
-                    searchLabel: "Buscar una dirección"
-                },
                 userLocation: {},
                 icon: icon ({
                     iconUrl: require("leaflet/dist/images/marker-icon.png"),
@@ -80,18 +75,28 @@
                 tileProviders: [
                     {
                         name: "Mapa",
-                        visible: true,
+                        visible: false,
                         attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                         url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     },
                     {
                         name: "Satélite",
-                        visible: false,
+                        visible: true,
                         attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                         url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png"
                     }
                 ]
             }
+        },
+
+        computed: {
+            geoSearchOptions() {
+                return {
+                    provider: new OpenStreetMapProvider(),
+                    autoClose: true,
+                    searchLabel: this.$t('componenteMapa.labelDireccion')
+                };
+            },
         },
 
         mounted() {

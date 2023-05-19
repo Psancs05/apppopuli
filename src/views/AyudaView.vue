@@ -2,7 +2,7 @@
   <div class="ayuda">
     <IconoUsuario />
 
-    <div class="titulo">Ayuda</div>
+    <div class="titulo">{{this.$t("ayuda.titulo")}}</div>
 
     <div style="padding-bottom: 10px">
       <v-card class="mx-auto" width="98%" max-width="800">
@@ -63,14 +63,14 @@
                     <v-list-item>
                       <v-list-item-content style="text-align: justify">
                         <div class="titulo_patogeno">
-                          ¿A quién ataca?
+                          {{$t("ayuda.desc1")}}
                           <br /><br />
                         </div>
                         {{ patogeno.parrafo_quien }}
 
                         <div class="titulo_patogeno">
                           <br />
-                          ¿Cómo identificarlo?
+                          {{$t("ayuda.desc2")}}
                           <br /><br />
                         </div>
                         {{ patogeno.parrafo_como }}
@@ -91,14 +91,14 @@
 
                         <div class="titulo_patogeno">
                           <br />
-                          ¿Qué daños causa?
+                          {{$t("ayuda.desc3")}}
                           <br /><br />
                         </div>
                         {{ patogeno.parrafo_que }}
 
                         <div class="titulo_patogeno">
                           <br />
-                          ¿Cuándo verlo?
+                          {{$t("ayuda.desc4")}}
                           <br /><br />
                         </div>
                         {{ patogeno.parrafo_cuando }}
@@ -113,7 +113,7 @@
                             color="#ff5d55"
                             @click="download(patogeno.id)"
                           >
-                            descargar ficha en formato pdf
+                          {{$t("ayuda.descargarPDFBoton")}}
                           </v-btn>
                         </div>
                       </v-list-item-content>
@@ -156,7 +156,7 @@ export default {
 
   data: () => ({
     activeTab: 0,
-    tabs: ["CÓMO USAR LA APLICACIÓN", "PLAGAS Y ENFERMEDADES"],
+    // tabs: ["CÓMO USAR LA APLICACIÓN", "PLAGAS Y ENFERMEDADES"],
 
     patogenos: [],
     sintomas: [],
@@ -166,6 +166,12 @@ export default {
     informePath() {
       return `/${i18n.locale}/informe`;
     },
+    tabs() {
+    return [
+      this.$t("ayuda.tabAyuda"),
+      this.$t("ayuda.tabEnfermedades")
+    ];
+  },
   },
 
   methods: {

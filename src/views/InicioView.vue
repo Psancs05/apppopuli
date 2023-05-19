@@ -17,7 +17,7 @@
           color="#ff5d55"
           :to="informePath"
         >
-          enviar informe
+          {{ this.$t("inicio.botonInforme") }}
         </v-btn>
 
         <v-divider></v-divider>
@@ -31,7 +31,7 @@
           color="#178649"
           :to="loginPath"
         >
-          iniciar sesión
+        {{ this.$t("inicio.botonLogin") }}
         </v-btn>
 
         <v-btn
@@ -42,7 +42,7 @@
           color="#178649"
           @click="logout"
         >
-          cerrar sesión
+        {{ this.$t("inicio.botonLogout") }}
         </v-btn>
       </v-container>
     </div>

@@ -2,20 +2,19 @@
   <div class="ayuda">
     <IconoUsuario />
 
-    <div class="titulo">¡Gracias!</div>
+    <div class="titulo">{{this.$t("gracias.titulo")}}</div>
 
     <div class="cuerpo">
       <v-card class="mx-auto" width="90%" max-width="800" elevation="0">
-        Tu informe se ha enviado correctamente.
+        {{this.$t("gracias.informeEnviado")}}
         <br /><br />
-        ¡Ayúdanos a mejorar! Queremos saber tu opinión sobre nuestra aplicacón.
-        Rellenar este
+        {{this.$t("gracias.msgFormulario1")}}
         <a
           style="font-weight: bold; color: #ff5d55; text-decoration: none"
           href="url"
-          >formulario</a
+          >{{this.$t("gracias.msgFormulario2")}}</a
         >
-        solo te llevará unos minutos.
+        {{this.$t("gracias.msgFormulario3")}}
       </v-card>
 
       <br /><br />
@@ -28,7 +27,7 @@
         color="#178649"
         :to="inicioPath"
       >
-        no, gracias
+        {{this.$t("gracias.msgNo")}}
       </v-btn>
     </div>
   </div>

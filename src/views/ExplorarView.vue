@@ -2,13 +2,13 @@
   <div class="ayuda">
     <IconoUsuario />
 
-    <div class="titulo">Explorar</div>
+    <div class="titulo">{{this.$t("explorar.titulo")}}</div>
 
     <div style="padding-bottom: 15px">
       <v-card class="mx-auto" width="98%" max-width="800">
         <v-tabs v-model="tabModel" background-color="#178649" grow dark>
           <v-tab>
-            <div class="texto_tab">HISTORIAL DE INFORMES</div>
+            <div class="texto_tab">{{this.$t("explorar.nombreTabla")}}</div>
           </v-tab>
         </v-tabs>
 
@@ -108,17 +108,6 @@ export default {
     dialog: false,
 
     informes: [],
-    headers: [
-      { text: "Plaga o Enfermedad", value: "patogeno", sortable: true },
-      { text: "Fecha", value: "fecha", sortable: true },
-      {
-        text: "Total de árboles dañados",
-        value: "extension_arboles",
-        sortable: false,
-      },
-      { text: "Severidad del daño", value: "severidad", sortable: true },
-      { text: "Localización", value: "localizacion", sortable: true },
-    ],
 
     page: 1,
     pageCount: 0,
@@ -144,6 +133,19 @@ export default {
     informePath() {
       return `/${i18n.locale}/informe`;
     },
+    headers() {
+    return [
+      { text: this.$t("explorar.col1"), value: "patogeno", sortable: true },
+      { text: this.$t("explorar.col2"), value: "fecha", sortable: true },
+      {
+        text: this.$t("explorar.col3"),
+        value: "extension_arboles",
+        sortable: false,
+      },
+      { text: this.$t("explorar.col4"), value: "severidad", sortable: true },
+      { text: this.$t("explorar.col5"), value: "localizacion", sortable: true },
+    ];
+  },
   },
 
   methods: {

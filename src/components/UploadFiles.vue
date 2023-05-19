@@ -22,14 +22,14 @@
 
     <label class="boton_examinar btn">
         <v-icon color="#178649" size=17>mdi-camera</v-icon>
-        SELECCIONAR ARCHIVOS
+        {{$t("componenteSubirArchivos.labelSeleccionarArchivos")}}
         <input style="display: none" type="file" multiple @change="selectFile">
     </label>
 
     <button  class="boton_subir btn"
       :disabled="!selectedFiles"
       @click="uploadFiles">
-      SUBIR ARCHIVOS
+      {{$t("componenteSubirArchivos.labelSubirArchivos")}}
     </button>
 
     <br><br>
@@ -82,7 +82,7 @@
             })
             .catch(() => {
             this.progressInfos[idx].percentage = 0;
-            this.message = "El archivo no se ha podido enviar correctamente: " + file.name;
+            this.$t('componenteSubirArchivos.msgError') + file.name;
             });
       },
 

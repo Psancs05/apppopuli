@@ -2,7 +2,7 @@
   <div id="informe">
     <IconoUsuario />
 
-    <div class="titulo">Registrarse</div>
+    <div class="titulo">{{this.$t("registro.titulo")}}</div>
 
     <div class="cuerpo">
       <v-container fluid style="width: 95%; max-width: 500px">
@@ -12,7 +12,7 @@
             required
             :rules="reglaObligatorio"
             append-outer-icon="mdi-account"
-            label="Teléfono o correo electrónico"
+            :label="$t('registro.labelCorreo')"
             color="#178649"
           >
           </v-text-field>
@@ -23,7 +23,7 @@
             :rules="reglaObligatorio"
             :append-outer-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show ? 'text' : 'password'"
-            label="Contraseña"
+            :label="$t('registro.labelContrasena')"
             color="#178649"
             @click:append-outer="show = !show"
           >
@@ -39,7 +39,7 @@
             :disabled="!valid"
             @click="register"
           >
-            registrarse
+          {{this.$t("registro.botonRegistro")}}
           </v-btn>
 
           <br /><br />
@@ -68,7 +68,7 @@ export default {
       valid: false,
       show: false,
 
-      reglaObligatorio: [(v) => !!v || "Este campo es obligatorio"],
+      reglaObligatorio: [(v) => !!v || this.$t("registro.reglaObligatorio")],
 
       user: new User("", ""),
       message: "",
