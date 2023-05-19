@@ -121,7 +121,7 @@
                   color="#ff5d55"
                   @click="dialog = false"
                 >
-                  aceptar
+                {{$t("informe.btnAceptar")}}
                 </v-btn>
               </v-card-actions>
             </v-card>

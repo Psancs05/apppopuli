@@ -3,5 +3,83 @@
     "ayuda": "Help",
     "inicio": "Home",
     "explorar": "Explore"
+  },
+  "inicio": {
+    "botonInforme": "submit report",
+    "botonLogin": "log in",
+    "botonLogout": "log out"
+  },
+  "login": {
+    "titulo": "Log in",
+    "labelCorreo": "Phone or email",
+    "labelContrasena": "Password",
+    "botonLogin": "log in",
+    "textRegistro": "Don't have an account?",
+    "botonRegistro": "Sign up",
+    "reglaObligatorio": "This field is required"
+  },
+  "registro": {
+    "titulo": "Register",
+    "labelCorreo": "Phone or email",
+    "labelContrasena": "Password",
+    "botonRegistro": "register",
+    "reglaObligatorio": "This field is required"
+  },
+  "explorar": {
+    "titulo": "Explore",
+    "nombreTabla": "REPORT HISTORY",
+    "col1": "Pest or Disease",
+    "col2": "Date",
+    "col3": "Total damaged trees",
+    "col4": "Severity of damage",
+    "col5": "Location"
+  },
+  "gracias": {
+    "titulo": "Thank you!",
+    "informeEnviado": "Your report has been sent successfully.",
+    "msgFormulario1": "Help us to improve! We want to know your opinion about our app.\nFill out this",
+    "msgFormulario2": "form",
+    "msgFormulario3": "it will only take a few minutes.",
+    "msgNo": "no, thanks"
+  },
+  "ayuda": {
+    "titulo": "Help",
+    "tabAyuda": "HOW TO USE THE APPLICATION",
+    "tabEnfermedades": "PESTS AND DISEASES",
+    "desc1": "Who does it attack?",
+    "desc2": "How to identify it?",
+    "desc3": "What damage does it cause?",
+    "desc4": "When to see it?",
+    "descargarPDFBoton": "download data sheet in pdf format",
+    "labelFiltro": "Filter by symptoms"
+  },
+  "informe": {
+    "titulo": "Report",
+    "campoAsteriscos": "Fields accompanied by an asterisk (*) are",
+    "msgObligatorios": "mandatory",
+    "labelEnfermedad": "Pest/Disease (if known)",
+    "msgAyuda": "You will find more information about pests and diseases that\naffect the poplar in the help section.",
+    "labelFecha": "Date (*)",
+    "labelLocalizacion": "Location (*)",
+    "labelArbolesDaniados": "Total damaged trees (*)",
+    "labelPorcentajeAfectados": "Percentage of affected trees (*)",
+    "labelSeveridad": "Severity of damage",
+    "labelObservaciones": "Observations",
+    "labelCorreoTelefono": "Phone or email (*)",
+    "suffixArboles": "tree/s",
+    "botonEnviar": "submit",
+    "dropDownExtension": "More than 100",
+    "dropDownSeveridad": "More than 75",
+    "msgCampoObligatorio": "This field is required",
+    "msgValorIncorrecto": "Enter a numerical value between 1 and 100",
+    "btnAceptar": "accept"
+  },
+  "componenteMapa": {
+    "labelDireccion": "Search for an address"
+  },
+  "componenteSubirArchivos": {
+    "labelSeleccionarArchivos": "SELECT FILES",
+    "labelSubirArchivos": "UPLOAD FILES",
+    "msgError": "The file could not be sent correctly: "
   }
 }

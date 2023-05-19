@@ -50,7 +50,8 @@
     "desc2": "¿Cómo identificarlo?",
     "desc3": "¿Qué daños causa?",
     "desc4": "¿Cuándo verlo?",
-    "descargarPDFBoton": "descargar ficha en formato pdf"
+    "descargarPDFBoton": "descargar ficha en formato pdf",
+    "labelFiltro": "Filtrar por síntomas"
   },
   "informe":{
     "titulo": "Informe",
@@ -70,7 +71,8 @@
     "dropDownExtension": "Más de 100",
     "dropDownSeveridad": "Más del 75",
     "msgCampoObligatorio": "Este campo es obligatorio",
-    "msgValorIncorrecto": "Introduce un valor numérico entre 1 y 100"
+    "msgValorIncorrecto": "Introduce un valor numérico entre 1 y 100",
+    "btnAceptar": "aceptar"
   },
   "componenteMapa":{
     "labelDireccion": "Buscar una dirección"

@@ -32,7 +32,7 @@
                 <v-select
                   v-model="selectedSintoma"
                   clearable
-                  label="Filtrar por síntomas"
+                  :label="$t('ayuda.labelFiltro')"
                   color="#178649"
                   :items="sintomas"
                   :item-text="'descripcion'"
