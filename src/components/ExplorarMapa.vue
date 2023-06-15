@@ -1,7 +1,7 @@
 <template>
     <l-map
         ref="map"
-        zoom=10
+        zoom=14
         style="z-index: 0"
         :center="[
             position.lat || userLocation.lat || defaultLocation.lat,

@@ -1,7 +1,7 @@
 <template>
     <l-map
         ref="map"
-        zoom=14
+        zoom=16
         style="z-index: 0"
         @dblclick="onMapClick"
         :center="[
