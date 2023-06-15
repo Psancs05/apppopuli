@@ -36,7 +36,7 @@
 
             <v-tooltip top slot="append-outer">
               <template v-slot:activator="{ on }">
-                <router-link :to="ayudaPath">
+                <router-link :to="{ name: 'ayuda', query: { tab: '1' } }">
                   <v-icon v-on="on" size="20" color="#178649">
                     mdi-help
                   </v-icon>

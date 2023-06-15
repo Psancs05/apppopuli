@@ -202,6 +202,12 @@ export default {
     sintomas: [],
   }),
 
+  created() {
+      if (this.$route.query.tab) {
+        this.activeTab = Number(this.$route.query.tab);
+      }
+  },
+
   computed: {
     informePath() {
       return `/${i18n.locale}/informe`;
