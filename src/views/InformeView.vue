@@ -333,6 +333,10 @@ export default {
       PatogenoDataService.getAll()
         .then((response) => {
           this.patogenos = response.data.map(this.getMostrarPatogeno);
+          this.patogenos.unshift({
+            nombre_cientifico: this.$t("informe.plagaNoIdentificadaTile.nombre_c"),
+            nombre_vulgar: this.$t("informe.plagaNoIdentificadaTile.nombre_v")
+          });
           console.log(response.data);
         })
         .catch((e) => {
