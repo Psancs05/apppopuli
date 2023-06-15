@@ -72,7 +72,11 @@
     "dropDownSeveridad": "More than 75",
     "msgCampoObligatorio": "This field is required",
     "msgValorIncorrecto": "Enter a numerical value between 1 and 100",
-    "btnAceptar": "accept"
+    "btnAceptar": "accept",
+    "ayuda1": "Number of trees damaged: 1, 2-10, 10-100, more than 100.",
+    "ayuda2": "Percentage of trees affected with respect to the total plot (approximate).",
+    "ayuda3": "0-25% (if it affects between 0-25% of the tree (crown or trunk, depending on the damage observed)), 25-75% (if it affects 25-75%), and more than 75% (if it affects 75%)).",
+    "ayuda4": "You can include the type of poplar clone and its age, as well as a description of the damage complementary to what is seen in the photo."
   },
   "componenteMapa": {
     "labelDireccion": "Search for an address"

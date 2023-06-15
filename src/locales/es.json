@@ -72,7 +72,11 @@
     "dropDownSeveridad": "Más del 75",
     "msgCampoObligatorio": "Este campo es obligatorio",
     "msgValorIncorrecto": "Introduce un valor numérico entre 1 y 100",
-    "btnAceptar": "aceptar"
+    "btnAceptar": "aceptar",
+    "ayuda1": "Número de árboles dañados: 1, 2-10, 10-100, más de 100.",
+    "ayuda2": "Porcentaje de pies afectados respecto al total de la parcela (aproximado).",
+    "ayuda3": "0-25% (si afecta entre el 0-25% del árbol (de la copa o del tronco, según el daño observado)), 25-75% (si afecta al 25-75%), y más del 75% ((si afecta al 75%)).",
+    "ayuda4": "Se puede incluir el tipo de clon de chopo y su edad, así como una descripción el daño complementaria a lo que se ve en la foto."
   },
   "componenteMapa":{
     "labelDireccion": "Buscar una dirección"

@@ -140,7 +140,7 @@
               <template v-slot:activator="{ on }">
                 <v-icon v-on="on" size="20" color="#178649"> mdi-help </v-icon>
               </template>
-              <span>si me disculpa</span> 
+              <span>{{$t("informe.ayuda1")}}</span> 
             </v-tooltip>
           </v-select>
 
@@ -156,7 +156,7 @@
               <template v-slot:activator="{ on }">
                 <v-icon v-on="on" size="20" color="#178649"> mdi-help </v-icon>
               </template>
-              <span>si me disculpa</span>
+              <span>{{$t("informe.ayuda2")}}</span>
             </v-tooltip>
           </v-text-field>
 
@@ -171,12 +171,23 @@
               <template v-slot:activator="{ on }">
                 <v-icon v-on="on" size="20" color="#178649"> mdi-help </v-icon>
               </template>
-              <span>si me disculpa</span>
+              <span>{{$t("informe.ayuda3")}}</span>
             </v-tooltip>
           </v-select>
 
           <v-textarea v-model="informe.observaciones" color="#178649" auto-grow>
             <template v-slot:label> {{$t("informe.labelObservaciones")}} </template>
+            <v-tooltip top slot="append-outer">
+              <template v-slot:activator="{ on }">
+                <v-icon
+                  v-on="on"
+                  size="20"
+                  color="#178649">
+                  mdi-help
+                </v-icon>
+              </template>
+              <span>{{$t("informe.ayuda4")}}</span>
+            </v-tooltip>
           </v-textarea>
 
           <v-text-field
