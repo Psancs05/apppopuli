@@ -15,11 +15,51 @@
         </v-tabs>
 
         <v-tabs-items v-model="activeTab">
+          <!-- TODO: Faltan las capturas en ingles -->
           <v-tab-item>
-            <v-card flat>
-              <v-card-text style="text-align: justify"> Usándola. </v-card-text>
-            </v-card>
-          </v-tab-item>
+  <v-card flat>
+    <v-card-text style="text-align: justify">
+      {{ $t("ayuda.introduccion.acceso_aplicacion_web") }}
+      <br><br>
+      <div style="text-align: center">
+        <img src="../assets/ayuda/image2.png" alt="homePage" width="40%" height="40%">
+      </div>
+      <br><br>
+      <strong>{{ $t("ayuda.paso1.titulo") }}</strong> {{ $t("ayuda.paso1.descripcion") }}
+      <br><br>
+      <strong>{{ $t("ayuda.paso2.titulo") }}</strong> {{ $t("ayuda.paso2.descripcion") }}
+      <br><br>
+      <div style="text-align: center">
+        <img src="../assets/ayuda/image1.png" alt="homePage" width="40%" height="40%">
+      </div>
+      <br><br>
+      <strong>{{ $t("ayuda.paso3.titulo") }}</strong> {{ $t("ayuda.paso3.descripcion") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.plaga_o_enfermedad") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.fotografias") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.fecha") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.localizacion") }}
+      <br><br>
+      <div style="text-align: center">
+        <img src="../assets/ayuda/image3.png" alt="homePage" width="40%" height="40%">
+      </div>
+      <br><br>
+      {{ $t("ayuda.paso3.campos.total_arboles") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.porcentaje_afectado") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.severidad_dano") }}
+      <br><br>
+      {{ $t("ayuda.paso3.campos.observaciones") }}
+      <br><br>
+      <strong>{{ $t("ayuda.paso5.titulo") }}</strong> {{ $t("ayuda.paso5.descripcion") }}
+      <br><br>
+    </v-card-text>
+  </v-card>
+</v-tab-item>
 
           <v-tab-item>
             <v-card class="mx-auto" width="98%" flat>
