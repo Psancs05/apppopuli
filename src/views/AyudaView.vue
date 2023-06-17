@@ -125,7 +125,7 @@
                             color="#178649"
                             @click="show(patogeno.id)"
                           >
-                            figura 1
+                          {{$t("ayuda.figura")}} 1
                           </v-btn>
                         </div>
 
@@ -222,7 +222,7 @@ export default {
 
   methods: {
     mostrarPatogenos() {
-      PatogenoDataService.getAll()
+      PatogenoDataService.getAll(this.$i18n.locale)
         .then((response) => {
           this.patogenos = response.data;
           console.log(response.data);
@@ -239,7 +239,7 @@ export default {
         // que muestra todos
         this.mostrarPatogenos();
       } else {
-        PatogenoDataService.get(this.selectedSintoma)
+        PatogenoDataService.get(this.selectedSintoma, this.$i18n.locale)
           .then((response) => {
             this.patogenos = response.data;
             console.log(response.data);
@@ -264,7 +264,7 @@ export default {
     },
 
     mostrarSintomas() {
-      SintomaDataService.getAll()
+      SintomaDataService.getAll(this.$i18n.locale)
         .then((response) => {
           this.sintomas = response.data;
           console.log(response.data);

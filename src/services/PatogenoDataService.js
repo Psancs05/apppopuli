@@ -2,12 +2,12 @@ import http from "../http-common";
 
 class PatogenoDataService {
 
-  getAll() {
-    return http.get("/patogenos");
+  getAll(lang) {
+    return http.get(`/patogenos/${lang}`);
   }
 
-  get(id_sintoma) {
-    return http.get(`/patogenos/${id_sintoma}`);
+  get(id_sintoma, lang) {
+    return http.get(`/patogenos/${id_sintoma}/${lang}`);
   }
 
 }

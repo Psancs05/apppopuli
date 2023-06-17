@@ -330,7 +330,7 @@ export default {
 
   methods: {
     mostrarPatogenos() {
-      PatogenoDataService.getAll()
+      PatogenoDataService.getAll(this.$i18n.locale)
         .then((response) => {
           this.patogenos = response.data.map(this.getMostrarPatogeno);
           this.patogenos.unshift({

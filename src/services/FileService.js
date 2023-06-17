@@ -14,8 +14,8 @@ class FileService {
     });
   }
 
-  download(file) {
-    return http.get(`/files/${file}.pdf`, {
+  download(lang, file) {
+    return http.get(`/files/${lang}/${file}.pdf`, {
       headers: {
         "Content-Type": "multipart/form-data"
       },
@@ -32,8 +32,8 @@ class FileService {
     })
   }
 
-  getFiles() {
-    return http.get("/files");
+  getFiles(lang) {
+    return http.get(`/files/${lang}`);
   }
 }
 

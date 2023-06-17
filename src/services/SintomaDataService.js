@@ -2,8 +2,8 @@ import http from "../http-common";
 
 class SintomaDataService {
 
-  getAll() {
-    return http.get("/sintomas");
+  getAll(lang) {
+    return http.get(`/sintomas/${lang}`);
   }
 
 }

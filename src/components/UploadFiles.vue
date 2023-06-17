@@ -75,7 +75,7 @@
             let prevMessage = this.message ? this.message + "\n" : "";
             this.message = prevMessage + response.data.message;
 
-            return FileService.getFiles();
+            return FileService.getFiles(this.$i18n.locale);
             })
             .then((files) => {
             this.fileInfos = files.data;
@@ -95,7 +95,7 @@
       }
     },
     mounted() {
-        FileService.getFiles().then((response) => {
+        FileService.getFiles(this.$i18n.locale).then((response) => {
         this.fileInfos = response.data;
         });
     }
