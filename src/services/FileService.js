@@ -15,7 +15,7 @@ class FileService {
   }
 
   download(lang, file) {
-    return http.get(`/files/${lang}/${file}.pdf`, {
+    return http.get(`/files/${lang}/${file}_${lang}.pdf`, {
       headers: {
         "Content-Type": "multipart/form-data"
       },

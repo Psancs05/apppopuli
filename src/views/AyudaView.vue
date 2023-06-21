@@ -151,7 +151,7 @@
                             max-width="500px"
                             height="50"
                             color="#ff5d55"
-                            @click="download(patogeno.id)"
+                            @click="download($i18n.locale, patogeno.id)"
                           >
                           {{$t("ayuda.descargarPDFBoton")}}
                           </v-btn>
@@ -224,7 +224,10 @@ export default {
     mostrarPatogenos() {
       PatogenoDataService.getAll(this.$i18n.locale)
         .then((response) => {
-          this.patogenos = response.data;
+          // this.patogenos = response.data;
+          this.patogenos = response.data.sort((a, b) =>
+            a.nombre_cientifico.localeCompare(b.nombre_cientifico)
+          );
           console.log(response.data);
         })
         .catch((e) => {
@@ -265,7 +268,7 @@ export default {
 
     mostrarSintomas() {
       SintomaDataService.getAll(this.$i18n.locale)
-        .then((response) => {
+        .then((response) => {         
           this.sintomas = response.data;
           console.log(response.data);
         })
@@ -281,8 +284,8 @@ export default {
       };
     },
 
-    download(file) {
-      FileService.download(file)
+    download(lang, file) {
+      FileService.download(lang, file)
         .then((response) => {
           var fileURL = window.URL.createObjectURL(new Blob([response.data]));
           var fileLink = document.createElement("a");
