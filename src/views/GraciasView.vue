@@ -15,14 +15,14 @@
           v-if="$i18n.locale === 'es'"
           style="font-weight: bold; color: #ff5d55; text-decoration: none"
           href="https://forms.gle/ZnKkEdVEL6NtmBqRA"
-        >{{this.$t("gracias.msgFormulario2_es")}}</a>
+        >{{this.$t("gracias.msgFormulario2")}}</a>
 
         <!--? Formulario en ingles -->
         <a
           v-else-if="$i18n.locale === 'en'"
           style="font-weight: bold; color: #ff5d55; text-decoration: none"
           href="https://forms.gle/utyGh8LENX6rLpeT7"
-        >{{this.$t("gracias.msgFormulario2_en")}}</a>
+        >{{this.$t("gracias.msgFormulario2")}}</a>
 
         {{this.$t("gracias.msgFormulario3")}}
       </v-card>
