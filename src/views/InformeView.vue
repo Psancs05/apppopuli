@@ -359,6 +359,11 @@ export default {
     },
 
     guardarInforme() {
+      // Todos los informes sin identificar se guardan con el nombre cientifico "unidentified"
+      if (this.informe.patogeno === this.$t("informe.plagaNoIdentificadaTile.nombre_c")) {
+        this.informe.patogeno = "Unknown";
+      }
+
       var data = {
         patogeno: this.informe.patogeno,
         fecha: this.date,

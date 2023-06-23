@@ -109,7 +109,7 @@
     "ayuda3": "0-25% (si afecta entre el 0-25% del árbol (de la copa o del tronco, según el daño observado)), 25-75% (si afecta al 25-75%), y más del 75% ((si afecta al 75%)).",
     "ayuda4": "Se puede incluir el tipo de clon de chopo y su edad, así como una descripción el daño complementaria a lo que se ve en la foto.",
     "plagaNoIdentificadaTile": {
-      "nombre_c": "No sé",
+      "nombre_c": "No identificada",
       "nombre_v": "No identifico la plaga/enfermedad"
     }
   },
