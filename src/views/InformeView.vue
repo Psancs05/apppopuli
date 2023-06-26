@@ -199,6 +199,12 @@
           >
           </v-text-field>
 
+          <v-switch
+              v-model="informe.isPublic"  
+              :label="`${$t('informe.msgPublico')} ${informe.isPublic ? $t('informe.publico') : $t('informe.privado')}`"
+              color="#178649"
+          ></v-switch>
+
           <v-divider />
 
           <v-btn
@@ -241,6 +247,7 @@ export default {
       severidad: "",
       observaciones: "",
       contacto: "",
+      isPublic: true,
     },
 
     valid: false,
@@ -370,6 +377,7 @@ export default {
         severidad: this.informe.severidad,
         observaciones: this.informe.observaciones,
         contacto: this.informe.contacto,
+        isPublic: this.informe.isPublic,
       };
 
       InformeDataService.create(data)

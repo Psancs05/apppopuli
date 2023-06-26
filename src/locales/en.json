@@ -110,7 +110,10 @@
     "plagaNoIdentificadaTile": {
       "nombre_c": "I don't know",
       "nombre_v": "I do not identify the pest/disease"
-    }
+    },
+    "msgPublico": "The report will be sent ",
+    "publico": "publicly",
+    "privado": "privately"
   },
   "componenteMapa": {
     "labelDireccion": "Search for an address"

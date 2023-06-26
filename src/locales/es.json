@@ -110,7 +110,10 @@
     "plagaNoIdentificadaTile": {
       "nombre_c": "No sé",
       "nombre_v": "No identifico la plaga/enfermedad"
-    }
+    },
+    "msgPublico": "El informe se enviará de forma ",
+    "publico": "pública",
+    "privado": "privada"
   },
   "componenteMapa":{
     "labelDireccion": "Buscar una dirección"
