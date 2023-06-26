@@ -248,6 +248,7 @@ export default {
       observaciones: "",
       contacto: "",
       isPublic: true,
+      userId: null,
     },
 
     valid: false,
@@ -366,6 +367,8 @@ export default {
     },
 
     guardarInforme() {
+      const userId = this.$store.state.auth.user.id || null;
+
       var data = {
         patogeno: this.informe.patogeno,
         fecha: this.date,
@@ -378,6 +381,7 @@ export default {
         observaciones: this.informe.observaciones,
         contacto: this.informe.contacto,
         isPublic: this.informe.isPublic,
+        userId: userId,
       };
 
       InformeDataService.create(data)

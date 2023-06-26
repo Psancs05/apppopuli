@@ -7,7 +7,8 @@
   "inicio":{
     "botonInforme": "enviar informe",
     "botonLogin": "iniciar sesión",
-    "botonLogout": "cerrar sesión"
+    "botonLogout": "cerrar sesión",
+    "botonMisInformes": "mis informes"
   },
   "login":{
     "titulo": "Iniciar sesión",
@@ -122,5 +123,14 @@
     "labelSeleccionarArchivos": "SELECCIONAR ARCHIVOS",
     "labelSubirArchivos": "SUBIR ARCHIVOS",
     "msgError": "El archivo no se ha podido enviar correctamente: "
+  },
+  "misInformes": {
+    "titulo": "Mis informes",
+    "nombreTabla": "Historial de mis informes",
+    "col1": "Plaga o Enfermedad",
+    "col2": "Fecha",
+    "col3": "Total de árboles dañados",
+    "col4": "Severidad del daño",
+    "col5": "Localización"
   }
 }

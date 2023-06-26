@@ -7,7 +7,8 @@
   "inicio": {
     "botonInforme": "submit report",
     "botonLogin": "log in",
-    "botonLogout": "log out"
+    "botonLogout": "log out",
+    "botonMisInformes": "my reports"
   },
   "login": {
     "titulo": "Log in",
@@ -122,5 +123,14 @@
     "labelSeleccionarArchivos": "SELECT FILES",
     "labelSubirArchivos": "UPLOAD FILES",
     "msgError": "The file could not be sent correctly: "
+  },
+  "misInformes": {
+    "titulo": "My reports",
+    "nombreTabla": "History of my reports",
+    "col1": "Pest or Disease",
+    "col2": "Date",
+    "col3": "Total of damaged trees",
+    "col4": "Severity of the damage",
+    "col5": "Location"
   }
 }

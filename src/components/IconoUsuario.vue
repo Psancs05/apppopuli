@@ -28,18 +28,32 @@
               </v-list-item-title>
               </v-list-item>
           </v-list>
+
+          <v-list-item link>
+            <v-list-item-title>
+              <router-link :to="misInformes" style="color: black;">
+                {{$t("inicio.botonMisInformes")}}
+              </router-link>
+            </v-list-item-title>
+          </v-list-item>
+
+
         </v-menu>
     </div>
 </template>
 
 <script>
+import i18n from "@/i18n";
 
   export default {
 
     computed: {
       currentUser() {
         return this.$store.state.auth.user;
-      }
+      },
+      misInformes() {
+        return `/${i18n.locale}/misinformes`;
+      },
     },
 
     methods: {

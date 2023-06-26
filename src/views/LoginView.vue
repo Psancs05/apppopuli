@@ -80,7 +80,7 @@ export default {
       valid: false,
       show: false,
 
-      reglaObligatorio: [(v) => !!v || this.$t("login.errorObligatorio")],
+      reglaObligatorio: [(v) => !!v || this.$t("login.reglaObligatorio")],
 
       user: new User("", ""),
       message: "",

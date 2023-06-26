@@ -7,6 +7,7 @@ import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import AyudaView from "../views/AyudaView.vue";
 import ExplorarView from "../views/ExplorarView.vue";
+import MisInformes from "../views/MisInformes.vue";
 import i18n from "@/i18n";
 
 Vue.use(VueRouter);
@@ -58,6 +59,11 @@ const routes = [
         path: "explorar",
         name: "explorar",
         component: ExplorarView,
+      },
+      {
+        path: "misinformes",
+        name: "misinformes",
+        component: MisInformes,
       },
     ],
   },
