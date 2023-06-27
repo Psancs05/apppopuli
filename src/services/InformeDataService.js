@@ -12,9 +12,11 @@ class InformeDataService {
   }
 
   getMyReports(userId) {
-    console.log('sada', userId);
-
     return http.get(`/informes/${userId}`);
+  }
+
+  dowloadMyReports(userId) {
+    return http.get(`/informes/download/${userId}`, { responseType: 'blob' });
   }
 }
 

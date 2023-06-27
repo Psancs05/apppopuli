@@ -76,6 +76,19 @@
         </v-card>
         </v-dialog>
 
+        <v-btn
+          class="boton_flotante"
+          fab
+          dark
+          fixed
+          bottom
+          right
+          color="#ff5d55"
+          @click="downloadCSV"
+        >
+          <v-icon>mdi-download</v-icon>
+        </v-btn>
+
     </div>
   </template>
   
@@ -166,6 +179,22 @@
           fecha.getFullYear();
   
         return fechaString;
+      },
+
+      downloadCSV() {
+        const userId = this.$store.state.auth.user?.id;
+
+        InformeDataService.dowloadMyReports(userId)
+          .then((response) => {
+            const blob = new Blob([response.data], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'informes.csv';
+            link.click();
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       },
     },
   
