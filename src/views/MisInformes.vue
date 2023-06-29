@@ -71,7 +71,7 @@
             <v-icon>mdi-close</v-icon>
             </v-btn>
             <div style="height: 400px">
-            <ExplorarMapa />
+              <MisInformesMapa />
             </div>
         </v-card>
         </v-dialog>
@@ -94,14 +94,14 @@
   
   <script>
   import IconoUsuario from "../components/IconoUsuario";
-  import ExplorarMapa from "../components/ExplorarMapa";
+  import MisInformesMapa from "../components/MisInformesMapa.vue";
   import InformeDataService from "../services/InformeDataService";
   import i18n from "@/i18n";
   
   export default {
     components: {
-      IconoUsuario,
-      ExplorarMapa,
+        IconoUsuario,
+        MisInformesMapa,
     },
   
     data: () => ({
