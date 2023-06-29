@@ -149,10 +149,17 @@ export default {
   },
 
   methods: {
+    // usamos esta funcion para cambiar el nombre de la plaga no identificada
+    informerNombre(informe) {
+      if (informe.patogeno === "Unknown" || informe.patogeno === "No identificada") {
+        informe.patogeno = this.$t("informe.plagaNoIdentificadaTile.nombre_c");
+      }
+      return informe;
+    },
     mostrarInformes() {
       InformeDataService.getAll()
         .then((response) => {
-          this.informes = response.data.map(this.getMostrarInforme);
+          this.informes = response.data.map(this.informerNombre);
           console.log(response.data);
         })
         .catch((e) => {

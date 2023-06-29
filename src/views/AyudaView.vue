@@ -21,7 +21,7 @@
       {{ $t("ayuda.introduccion.acceso_aplicacion_web") }}
       <br><br>
       <div style="text-align: center">
-        <img src="../assets/ayuda/image2.png" alt="homePage" width="40%" height="40%">
+        <img :src="require(`../assets/ayuda/i1_${$i18n.locale}.png`)" alt="homePage" width="80%" height="80%">
       </div>
       <br><br>
       <strong>{{ $t("ayuda.paso1.titulo") }}</strong> {{ $t("ayuda.paso1.descripcion") }}
@@ -29,12 +29,12 @@
       <strong>{{ $t("ayuda.paso2.titulo") }}</strong> {{ $t("ayuda.paso2.descripcion") }}
       <br><br>
       <div style="text-align: center">
-        <img src="../assets/ayuda/image1.png" alt="homePage" width="40%" height="40%">
+        <img :src="require(`../assets/ayuda/i2_${$i18n.locale}.png`)" alt="homePage" width="80%" height="80%">
       </div>
-      <br><br>
+      <br><br> 
       <strong>{{ $t("ayuda.paso3.titulo") }}</strong> {{ $t("ayuda.paso3.descripcion") }}
       <br><br>
-      {{ $t("ayuda.paso3.campos.plaga_o_enfermedad") }}
+      {{ $t("ayuda.paso3.campos.plaga_o_enfermedad1") }} <img src="../assets/ayuda/image4.png" alt="homePage" width="3%" height="3%"> {{ $t("ayuda.paso3.campos.plaga_o_enfermedad2") }}
       <br><br>
       {{ $t("ayuda.paso3.campos.fotografias") }}
       <br><br>
@@ -43,7 +43,7 @@
       {{ $t("ayuda.paso3.campos.localizacion") }}
       <br><br>
       <div style="text-align: center">
-        <img src="../assets/ayuda/image3.png" alt="homePage" width="40%" height="40%">
+        <img :src="require(`../assets/ayuda/i3_${$i18n.locale}.png`)" alt="homePage" width="80%" height="80%">
       </div>
       <br><br>
       {{ $t("ayuda.paso3.campos.total_arboles") }}
@@ -54,7 +54,7 @@
       <br><br>
       {{ $t("ayuda.paso3.campos.observaciones") }}
       <br><br>
-      <strong>{{ $t("ayuda.paso5.titulo") }}</strong> {{ $t("ayuda.paso5.descripcion") }}
+      <strong>{{ $t("ayuda.paso4.titulo") }}</strong> {{ $t("ayuda.paso4.descripcion") }}
       <br><br>
     </v-card-text>
   </v-card>
