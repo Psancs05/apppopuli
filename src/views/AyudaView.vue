@@ -115,7 +115,6 @@
                         {{ patogeno.parrafo_como }}
 
                         <div class="cuerpo" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                          {{ patogeno.id }}
                           <img
                             v-for="i in 3"
                             :key="i"
