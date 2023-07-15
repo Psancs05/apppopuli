@@ -121,7 +121,7 @@
                             :src="`/plagas/${patogeno.id}_${i}.jpg`"
                             @error="handleImageError"
                             :alt="`Image ${i}`"
-                            style="width: 100%; max-width: 300px; height: auto; margin-top: 30px;"
+                            class="patogeno-image"
                           />
                         </div>
 
@@ -341,5 +341,13 @@ export default {
   font-family: "Quicksand", sans-serif;
   font-size: 25px;
   color: #178649;
+}
+
+.patogeno-image {
+  object-fit: contain;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 30px;
 }
 </style>
