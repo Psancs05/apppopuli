@@ -123,6 +123,8 @@
   "componenteSubirArchivos":{
     "labelSeleccionarArchivos": "SELECCIONAR ARCHIVOS",
     "labelSubirArchivos": "SUBIR ARCHIVOS",
+    "labelAnalizarIA": "ANALIZAR CON INTELIGENCIA ARTIFICIAL",
+    "msgErrorIA": "Error al analizar los archivos con inteligencia artificial",
     "msgError": "El archivo no se ha podido enviar correctamente: "
   },
   "misInformes": {
