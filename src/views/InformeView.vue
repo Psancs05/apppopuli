@@ -367,8 +367,11 @@ export default {
     },
 
     guardarInforme() {
-      const userId = this.$store.state.auth.user.id || null;
-      
+      let userId = null;
+      if (this.$store.state.auth.user) {
+        userId = this.$store.state.auth.user.id;
+      }
+
       // Todos los informes sin identificar se guardan con el nombre cientifico "unidentified"
       if (this.informe.patogeno === this.$t("informe.plagaNoIdentificadaTile.nombre_c")) {
         this.informe.patogeno = "Unknown";
