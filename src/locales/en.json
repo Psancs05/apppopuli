@@ -7,7 +7,8 @@
   "inicio": {
     "botonInforme": "submit report",
     "botonLogin": "log in",
-    "botonLogout": "log out"
+    "botonLogout": "log out",
+    "botonMisInformes": "my reports"
   },
   "login": {
     "titulo": "Log in",
@@ -111,7 +112,10 @@
     "plagaNoIdentificadaTile": {
       "nombre_c": "Unknown",
       "nombre_v": "I do not identify the pest/disease"
-    }
+    },
+    "msgPublico": "The report will be sent ",
+    "publico": "publicly",
+    "privado": "privately"
   },
   "componenteMapa": {
     "labelDireccion": "Search for an address"
@@ -119,6 +123,17 @@
   "componenteSubirArchivos": {
     "labelSeleccionarArchivos": "SELECT FILES",
     "labelSubirArchivos": "UPLOAD FILES",
+    "labelAnalizarIA": "ANALYZE WITH ARTIFICIAL INTELLIGENCE",
+    "msgErrorIA": "Error analyzing files with artificial intelligence",
     "msgError": "The file could not be sent correctly: "
+  },
+  "misInformes": {
+    "titulo": "My reports",
+    "nombreTabla": "History of my reports",
+    "col1": "Pest or Disease",
+    "col2": "Date",
+    "col3": "Total of damaged trees",
+    "col4": "Severity of the damage",
+    "col5": "Location"
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <l-map
         ref="map"
-        zoom=14
+        :zoom=14
         style="z-index: 0"
         :center="[
             position.lat || userLocation.lat || defaultLocation.lat,
@@ -19,7 +19,7 @@
         <l-control-layers position="topright" />
         <l-marker
             v-for="informe in informes"
-            :key="informe"
+            :key="informe.id"
             visible
             :icon="icon"
             :lat-lng="informe.position">

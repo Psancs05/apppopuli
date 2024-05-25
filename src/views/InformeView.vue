@@ -199,6 +199,12 @@
           >
           </v-text-field>
 
+          <v-switch
+              v-model="informe.isPublic"  
+              :label="`${$t('informe.msgPublico')} ${informe.isPublic ? $t('informe.publico') : $t('informe.privado')}`"
+              color="#178649"
+          ></v-switch>
+
           <v-divider />
 
           <v-btn
@@ -241,6 +247,8 @@ export default {
       severidad: "",
       observaciones: "",
       contacto: "",
+      isPublic: true,
+      userId: null,
     },
 
     valid: false,
@@ -359,6 +367,11 @@ export default {
     },
 
     guardarInforme() {
+      let userId = null;
+      if (this.$store.state.auth.user) {
+        userId = this.$store.state.auth.user.id;
+      }
+
       // Todos los informes sin identificar se guardan con el nombre cientifico "unidentified"
       if (this.informe.patogeno === this.$t("informe.plagaNoIdentificadaTile.nombre_c")) {
         this.informe.patogeno = "Unknown";
@@ -375,6 +388,8 @@ export default {
         severidad: this.informe.severidad,
         observaciones: this.informe.observaciones,
         contacto: this.informe.contacto,
+        isPublic: this.informe.isPublic,
+        userId: userId,
       };
 
       InformeDataService.create(data)

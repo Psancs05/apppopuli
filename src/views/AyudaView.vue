@@ -15,7 +15,6 @@
         </v-tabs>
 
         <v-tabs-items v-model="activeTab">
-          <!-- TODO: Faltan las capturas en ingles -->
           <v-tab-item>
   <v-card flat>
     <v-card-text style="text-align: justify">
@@ -115,18 +114,15 @@
                         </div>
                         {{ patogeno.parrafo_como }}
 
-                        <div class="cuerpo">
-                          <v-btn
-                            style="margin-top: 30px"
-                            dark
-                            width="100%"
-                            max-width="500px"
-                            height="50"
-                            color="#178649"
-                            @click="show(patogeno.id)"
-                          >
-                          {{$t("ayuda.figura")}} 1
-                          </v-btn>
+                        <div class="cuerpo" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                          <img
+                            v-for="i in 3"
+                            :key="i"
+                            :src="`/plagas/${patogeno.id}_${i}.jpg`"
+                            @error="handleImageError"
+                            :alt="`Image ${i}`"
+                            class="patogeno-image"
+                          />
                         </div>
 
                         <div class="titulo_patogeno">
@@ -317,6 +313,11 @@ export default {
           console.log(e);
         });
     },
+
+    handleImageError(event) {
+      event.target.style.display = 'none'; // esconde la imagen si no puede ser cargada
+    }
+
   },
 
   mounted() {
@@ -340,5 +341,13 @@ export default {
   font-family: "Quicksand", sans-serif;
   font-size: 25px;
   color: #178649;
+}
+
+.patogeno-image {
+  object-fit: contain;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 30px;
 }
 </style>
