@@ -68,7 +68,8 @@
       "titulo": "STEP 3:",
       "descripcion": "Fill out the report. The screen for filling in the report contains a series of fields, it being mandatory to fill in those marked with an asterisk and it is advisable to fill in all of them. The fields to fill in are the following:",
       "campos": {
-        "plaga_o_enfermedad": "- Pest/disease (if known). By clicking on the dropdown, a list will appear with the most common pests/diseases that affect poplar. If the agent that caused the damage is known, it is enough to select it from the list by clicking. If it is not known, help in the form of pest and disease fact sheets can be found by clicking the help button. If, even with this information, you cannot identify yourself, select the \"I don't know\"; option at the beginning of the drop-down.",
+        "plaga_o_enfermedad1": "- Pest/disease (if known). By clicking on the dropdown, a list will appear with the most common pests/diseases that affect poplar. If the agent that caused the damage is known, it is enough to select it from the list by clicking. If it is not known, help in the form of pest and disease fact sheets can be found by clicking the help button.",
+        "plaga_o_enfermedad2": "If, even with this information, you cannot identify yourself, select the \"I don't know\"; option at the beginning of the drop-down.",
         "fotografias": "- Representative photographs of the damage (only one can be uploaded, although it is recommended to upload at least 3 more to have a more complete view of the damage). Subsequently, click on the button to upload the files (“Upload files”). If they have been uploaded successfully, a message will appear just below this button confirming it.",
         "fecha": "- The date the photo was taken. By default, the app autofills it with the current date, but it can be edited manually.",
         "localizacion": "- The location of the damage. By clicking on \"Location\", a window will be displayed with the map of the area where we are. On this map you can locate the exact point of damage by double-clicking. We will know that the point has been located correctly if a blue marker appears on the map, as seen in the image below. You can view the general map instead of the orthophoto, by clicking on the \"layers\" icon in the upper right corner.",
@@ -78,8 +79,8 @@
         "observaciones": "- Observations (optional): if known, the type of poplar clone and its age can be included, as well as a description of the damage complementary to what is seen in the photo."
       }
     },
-    "paso5": {
-      "titulo": "STEP 5:",
+    "paso4": {
+      "titulo": "STEP 4:",
       "descripcion": "Once complete, click Send."
     }
   },
@@ -108,7 +109,7 @@
     "ayuda3": "0-25% (if it affects between 0-25% of the tree (crown or trunk, depending on the damage observed)), 25-75% (if it affects 25-75%), and more than 75% (if it affects 75%)).",
     "ayuda4": "You can include the type of poplar clone and its age, as well as a description of the damage complementary to what is seen in the photo.",
     "plagaNoIdentificadaTile": {
-      "nombre_c": "I don't know",
+      "nombre_c": "Unknown",
       "nombre_v": "I do not identify the pest/disease"
     }
   },

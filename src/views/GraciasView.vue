@@ -9,11 +9,21 @@
         {{this.$t("gracias.informeEnviado")}}
         <br /><br />
         {{this.$t("gracias.msgFormulario1")}}
+
+        <!--? Formulario en espanol -->
         <a
+          v-if="$i18n.locale === 'es'"
           style="font-weight: bold; color: #ff5d55; text-decoration: none"
-          href="url"
-          >{{this.$t("gracias.msgFormulario2")}}</a
-        >
+          href="https://forms.gle/ZnKkEdVEL6NtmBqRA"
+        >{{this.$t("gracias.msgFormulario2")}}</a>
+
+        <!--? Formulario en ingles -->
+        <a
+          v-else-if="$i18n.locale === 'en'"
+          style="font-weight: bold; color: #ff5d55; text-decoration: none"
+          href="https://forms.gle/utyGh8LENX6rLpeT7"
+        >{{this.$t("gracias.msgFormulario2")}}</a>
+
         {{this.$t("gracias.msgFormulario3")}}
       </v-card>
 

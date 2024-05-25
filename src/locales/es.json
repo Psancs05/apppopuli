@@ -68,7 +68,8 @@
       "titulo": "PASO 3:",
       "descripcion": "Rellenar el informe. La pantalla de rellenar el informe contiene una serie de campos, siendo obligatorio cumplimentar los marcados con un asterisco y recomendable rellenarlos todos.",
       "campos": {
-        "plaga_o_enfermedad": "- Plaga/enfermedad (si se conoce). Al hacer clic en el desplegable, aparecerá un listado con las plagas/enfermedades más comunes que afectan al chopo. Si se conoce, el agente que ha causado el daño, basta con seleccionarlo del listado haciendo clic. Si no se conoce, se puede encontrar ayuda en forma de fichas sobre plagas y enfermedades haciendo clic en el botón de ayuda. Si aún con esta información, no se consigue identificar, seleccionar la opción “No sé” al comienzo del desplegable.",
+        "plaga_o_enfermedad1": "- Plaga/enfermedad (si se conoce). Al hacer clic en el desplegable, aparecerá un listado con las plagas/enfermedades más comunes que afectan al chopo. Si se conoce, el agente que ha causado el daño, basta con seleccionarlo del listado haciendo clic. Si no se conoce, se puede encontrar ayuda en forma de fichas sobre plagas y enfermedades haciendo clic en el botón de ayuda.",
+        "plaga_o_enfermedad2": "Si aún con esta información, no se consigue identificar, seleccionar la opción “No sé” al comienzo del desplegable.",
         "fotografias": "- Fotografías representativas del daño (se puede subir solo una, aunque se recomienda subir al menos 3 más para tener una visión más completa del daño). Posteriormente, hacer clic en el botón para subir los archivos (“Subir archivos”). Si se han subido correctamente, aparecerá un mensaje justo debajo de este botón confirmándolo.",
         "fecha": "- La fecha de toma de la foto. Por defecto, la aplicación la autorrellena con la fecha actual, pero puede editarse manualmente.",
         "localizacion": "- La localización del daño. Al hacer clic sobre “Localización”, se desplegará una ventana con el mapa de la zona donde nos encontramos. En este mapa se puede localizar el punto exacto del daño haciendo doble clic. Sabremos que el punto se ha localizado correctamente si aparece un marcador de color azul sobre el mapa, tal y como se ve en la imagen de abajo. Se puede visualizar la ortofoto en lugar del plano general, haciendo click en el icono de “capas” de la esquina superior derecha.",
@@ -78,8 +79,8 @@
         "observaciones": "- Observaciones (opcional): si se conoce, se puede incluir el tipo de clon de chopo y su edad, así como una descripción el daño complementaria a lo que se ve en la foto."
       }
     },
-    "paso5": {
-      "titulo": "PASO 5:",
+    "paso4": {
+      "titulo": "PASO 4:",
       "descripcion": "Una vez completo, pulsar en Enviar."
     }    
   },
@@ -108,7 +109,7 @@
     "ayuda3": "0-25% (si afecta entre el 0-25% del árbol (de la copa o del tronco, según el daño observado)), 25-75% (si afecta al 25-75%), y más del 75% ((si afecta al 75%)).",
     "ayuda4": "Se puede incluir el tipo de clon de chopo y su edad, así como una descripción el daño complementaria a lo que se ve en la foto.",
     "plagaNoIdentificadaTile": {
-      "nombre_c": "No sé",
+      "nombre_c": "No identificada",
       "nombre_v": "No identifico la plaga/enfermedad"
     }
   },
